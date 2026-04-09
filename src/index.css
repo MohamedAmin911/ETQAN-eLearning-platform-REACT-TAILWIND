@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+@import "tailwindcss";
+
+@source "../public/stitch/code/**/*.html";
+
+@theme {
+  --color-surface: #fdf8ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-bright: #fdf8ff;
+  --color-on-surface: #1c192d;
+  --color-primary: #4228ad;
+  --color-surface-variant: #e6dffa;
+  --color-error: #ba1a1a;
+  --color-secondary: #854a79;
+  --color-inverse-on-surface: #f4eeff;
+  --color-tertiary-container: #983a5d;
+  --color-inverse-surface: #312e43;
+  --color-on-secondary-container: #7c4271;
+  --color-on-error: #ffffff;
+  --color-surface-container-low: #f7f1ff;
+  --color-on-tertiary-fixed: #3e001d;
+  --color-surface-container-high: #ebe5ff;
+  --color-on-surface-variant: #484553;
+  --color-error-container: #ffdad6;
+  --color-surface-container: #f1ebff;
+  --color-primary-fixed-dim: #c8bfff;
+  --color-secondary-fixed-dim: #f8b0e6;
+  --color-on-primary-fixed-variant: #452cb0;
+  --color-on-secondary-fixed: #370432;
+  --color-surface-dim: #ddd6f2;
+  --color-on-primary-container: #d6ceff;
+  --color-on-tertiary: #ffffff;
+  --color-primary-fixed: #e5deff;
+  --color-secondary-container: #feb5ec;
+  --color-secondary-fixed: #ffd7f2;
+  --color-surface-tint: #5d48c9;
+  --color-inverse-primary: #c8bfff;
+  --color-background: #fdf8ff;
+  --color-outline: #787585;
+  --color-tertiary: #7a2246;
+  --color-on-secondary: #ffffff;
+  --color-on-tertiary-container: #ffc4d4;
+  --color-primary-container: #5a45c6;
+  --color-surface-container-highest: #e6dffa;
+  --color-on-secondary-fixed-variant: #6a3260;
+  --color-on-tertiary-fixed-variant: #7e2649;
+  --color-tertiary-fixed-dim: #ffb1c7;
+  --color-on-primary: #ffffff;
+  --color-outline-variant: #c9c4d6;
+  --color-on-primary-fixed: #1a0064;
+  --color-tertiary-fixed: #ffd9e2;
+  --color-on-error-container: #93000a;
+  --color-on-background: #1c192d;
+  --font-headline: "Plus Jakarta Sans", "Tajawal", sans-serif;
+  --font-body: "Be Vietnam Pro", "Tajawal", sans-serif;
+  --font-label: "Be Vietnam Pro", "Tajawal", sans-serif;
+}
+
+:root {
+  color: #0f172a;
+  background: #f8fafc;
+  font-family: "Plus Jakarta Sans", "Tajawal", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+.direction-rtl {
+  direction: rtl;
+}
+
+.max-w-8xl {
+  max-width: 96rem;
+}
+
+@keyframes statsCardEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes statsProgressLine {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.35;
+  }
+
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.stats-card-enter {
+  opacity: 0;
+  animation: statsCardEnter 720ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.stats-progress-line {
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: statsProgressLine 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
