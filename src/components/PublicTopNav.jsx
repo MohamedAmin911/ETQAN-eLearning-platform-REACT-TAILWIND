@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAppState } from '../hooks/useAppState'
 import { routes } from '../siteData'
 import { BrandLogo } from './BrandLogo'
@@ -10,13 +10,30 @@ const navItems = [
   { label: 'المدربون', key: 'instructors', path: routes.instructor.path },
 ]
 
+function inferActiveNav(pathname) {
+  if (pathname.startsWith(routes.dashboard.path) || pathname.startsWith(routes.watch.path)) {
+    return 'dashboard'
+  }
+
+  if (pathname.startsWith(routes.instructor.path)) {
+    return 'instructors'
+  }
+
+  if (pathname.startsWith(routes.courses.path) || pathname.startsWith(routes.checkout.path)) {
+    return 'courses'
+  }
+
+  return null
+}
+
 export function PublicTopNav({
-  active = 'courses',
+  active,
   searchPlaceholder,
   maxWidth = 'max-w-8xl',
   progress = 'full',
   className = '',
 }) {
+  const { pathname } = useLocation()
   const navigate = useNavigate()
   const [mobileOpen, setMobileOpen] = useState(false)
   const {
@@ -26,6 +43,7 @@ export function PublicTopNav({
     notifications,
     signOut,
   } = useAppState()
+  const resolvedActive = active === undefined ? inferActiveNav(pathname) : active
 
   const handlePrimaryAction = () => {
     if (authUser) {
@@ -55,7 +73,7 @@ export function PublicTopNav({
               key={item.key}
               to={item.path}
               className={
-                item.key === active
+                item.key === resolvedActive
                   ? 'border-b-2 border-violet-600 pb-1 font-bold text-violet-800'
                   : 'text-slate-600 transition-all duration-300 hover:text-violet-600'
               }
@@ -184,7 +202,11 @@ export function PublicTopNav({
                 key={item.key}
                 to={item.path}
                 onClick={() => setMobileOpen(false)}
-                className="rounded-xl px-3 py-2 text-slate-700 transition-colors hover:bg-violet-50 hover:text-violet-700"
+                className={
+                  item.key === resolvedActive
+                    ? 'rounded-xl bg-violet-50 px-3 py-2 font-bold text-violet-700'
+                    : 'rounded-xl px-3 py-2 text-slate-700 transition-colors hover:bg-violet-50 hover:text-violet-700'
+                }
               >
                 {item.label}
               </Link>
