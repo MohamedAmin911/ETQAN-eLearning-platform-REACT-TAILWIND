@@ -4,7 +4,8 @@ Frontend project for an online learning platform built with React, Vite, React R
 
 ## Live Demo
 
-Vercel: etqan-elearning.vercel.app
+Vercel: 
+https://etqan-elearning.vercel.app
 
 ## Screenshots
 
