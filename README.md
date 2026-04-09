@@ -48,9 +48,3 @@ npm run dev
 npm run build
 npm run lint
 ```
-
-## Notes
-
-- This project uses mock data and local state
-- Authentication is frontend-only
-- The UI is based on provided Stitch screens and converted into React components
