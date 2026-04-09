@@ -1,15 +1,55 @@
-# React + Vite
+# ETQAN eLearning Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend project for an online learning platform built with React, Vite, React Router, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Vercel: `[add-vercel-link-here]`
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# ETQAN-online-courses-platform-REACT-TAILWIND
-# ETQAN-eLearning-platform-REACT-TAILWIND
-# ETQAN-eLearning-platform-REACT-TAILWIND
+Home page: `[add-screenshot-here]`
+
+Courses page: `[add-screenshot-here]`
+
+Instructor page: `[add-screenshot-here]`
+
+Dashboard: `[add-screenshot-here]`
+
+## What It Includes
+
+- Home page with featured courses, instructors, and stats
+- Course catalog with search and filtering
+- Instructor listing and profile pages
+- Sign in and sign up flows
+- Course details, watch page, and checkout flow
+- Dashboard based on signed-in user data
+- Shared navbar, footer, and reusable page components
+
+## Tech Stack
+
+- React
+- Vite
+- React Router
+- Tailwind CSS
+- Local state with React Context
+
+## Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+npm run lint
+```
+
+## Notes
+
+- This project uses mock data and local state
+- Authentication is frontend-only
+- The UI is based on provided Stitch screens and converted into React components
